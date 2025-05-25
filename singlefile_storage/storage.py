@@ -316,7 +316,9 @@ LIST_TEMPLATE = """<!DOCTYPE html>
 
     <script>
     function deleteFile(filename) {
-                
+        if (!confirm("确定删除吗？")) {
+            return;
+        }
         fetch(`/delete/${filename}`, {
             method: 'DELETE'
         })
