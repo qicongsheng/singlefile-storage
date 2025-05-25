@@ -22,7 +22,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'single-file-storage = singlefile_storage.__main__:main'
+            'singlefile-storage = singlefile_storage.__main__:main'
         ]
     }
 )

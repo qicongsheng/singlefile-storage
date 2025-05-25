@@ -1,10 +1,5 @@
-# mt5proxy
+# singlefile-storage
 
-mt5proxy --users admin=123456,admin2=123
+singlefile-storage --users admin=123456,admin2=123 --port 5001 --data-path /data/singlefile --api-key Jyfi3ndu87
 
-http://127.0.0.1:8082/get_symbols
-
-http://127.0.0.1:8082/copy_rates_from?symbol=AUDUSD&time_frame=H4&date_from=20240116120000&count=10
-
-http://127.0.0.1:8082/copy_rates_range?symbol=USDCNH&time_frame=H1&date_from=20250110120000&date_to=20250117120000
-
+http://127.0.0.1:5001/list
