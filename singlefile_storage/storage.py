@@ -103,8 +103,7 @@ LIST_TEMPLATE = """<!DOCTYPE html>
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
+            width: 90%;
             background: var(--white);
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
