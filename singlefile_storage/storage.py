@@ -262,7 +262,7 @@ LIST_TEMPLATE = """<!DOCTYPE html>
                 {% for item in files %}
                 <tr>
                     <td class="truncate">
-                        <a href="/uploads/{{ item.filename }}">{{ item.filename }}</a>
+                        <a href="/uploads/{{ item.filename }}" target="_blank">{{ item.filename }}</a>
                     </td>
                     <td class="truncate">
                         <a href="{{ item.original_url }}" target="_blank">{{ item.original_url }}</a>
