@@ -251,8 +251,8 @@ LIST_TEMPLATE = """<!DOCTYPE html>
         <table>
             <thead>
                 <tr>
-                    <th style="width: 50%;">Filename</th>
-                    <th style="width: 20%;">Original URL</th>
+                    <th style="width: 40%;">Filename</th>
+                    <th style="width: 30%;">Original URL</th>
                     <th style="width: 15%;">Date</th>
                     <th style="width: 10%;">Size</th>
                     <th style="width: 5%;">Action</th>
