@@ -2,11 +2,11 @@
 # -*- coding:utf-8 -*-
 # Author: qicongsheng
 def get_name():
-    return 'single-file-storage'
+    return 'singlefile-storage'
 
 
 def get_version():
-    return '1.0.1'
+    return '1.0.2'
 
 
 def get_source_url():

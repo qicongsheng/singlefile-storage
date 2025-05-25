@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: qicongsheng
-from single_file_storage import help
+from singlefile_storage import help
 from setuptools import setup, find_packages
 
 setup(
@@ -22,7 +22,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'single-file-storage = single_file_storage.__main__:main'
+            'single-file-storage = singlefile_storage.__main__:main'
         ]
     }
 )

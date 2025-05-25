@@ -5,8 +5,8 @@ import argparse
 import os
 import sys
 
-from single_file_storage import help
-from single_file_storage import storage
+from singlefile_storage import help
+from singlefile_storage import storage
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
 
