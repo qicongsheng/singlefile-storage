@@ -6,7 +6,7 @@ def get_name():
 
 
 def get_version():
-    return '1.0.5'
+    return '1.0.6'
 
 
 def get_source_url():
