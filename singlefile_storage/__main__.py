@@ -27,7 +27,6 @@ def main():
     storage.users = args.users if args.users is not None else storage.users
     storage.DATA_PATH = args.data_path if args.data_path is not None else storage.DATA_PATH
     storage.API_KEY = args.api_key if args.api_key is not None else storage.API_KEY
-    storage.init_app()
     storage.start(port=args.port)
 
 

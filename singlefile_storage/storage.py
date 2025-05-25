@@ -406,7 +406,7 @@ def delete_file(filename):
     return jsonify({'message': 'File deleted successfully'}), 200
 
 
-@app.route('/list')
+@app.route('/')
 @auth.login_required
 def file_list():
     page = request.args.get('page', 1, type=int)
@@ -461,7 +461,13 @@ def serve_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return "Leave me alone."
+
+
 def start(port=5000):
+    init_app()
     app.run(host='0.0.0.0', port=port)
 
 

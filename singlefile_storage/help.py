@@ -6,7 +6,7 @@ def get_name():
 
 
 def get_version():
-    return '1.0.7'
+    return '1.0.8'
 
 
 def get_source_url():
@@ -14,4 +14,4 @@ def get_source_url():
 
 
 def print_version():
-    print('%s %s\r\nMt5 http proxy for python.' % (get_name(), get_version()))
+    print('%s %s\r\nSingleFile Rest Storage for python.' % (get_name(), get_version()))
