@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author: qicongsheng
 import os
 import sqlite3
 from math import ceil
@@ -5,36 +8,25 @@ from math import ceil
 from flask import Flask, request, jsonify, render_template_string, send_from_directory
 from flask_httpauth import HTTPBasicAuth
 
-app = Flask(__name__)
 users = {
     "admin": "password"
 }
-
 DATA_PATH = './data'
-
-app.config.update({
-    'UPLOAD_FOLDER': os.path.join(DATA_PATH, 'uploads'),  # 文件存储目录
-    'DATABASE': os.path.join(DATA_PATH, 'uploads.db'),  # SQLite数据库路径
-    'MAX_CONTENT_LENGTH': 16 * 1024 * 1024,
-    'ALLOWED_EXTENSIONS': {'html', 'htm'},
-    'API_KEYS': {'your-api-key'},
-    'ITEMS_PER_PAGE': 20  # 分页每页数量
-})
-
+API_KEY = 'your-api-key'
+app = Flask(__name__)
 auth = HTTPBasicAuth()
 
 
-@auth.get_password
-def get_password(username):
-    if username in users:
-        return users.get(username)
-    return None
-
-
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
-
-def init_db():
+def init_app():
+    app.config.update({
+        'UPLOAD_FOLDER': os.path.join(DATA_PATH, 'uploads'),  # 文件存储目录
+        'DATABASE': os.path.join(DATA_PATH, 'storage.db'),  # SQLite数据库路径
+        'MAX_CONTENT_LENGTH': 64 * 1024 * 1024,
+        'ALLOWED_EXTENSIONS': {'html', 'htm'},
+        'API_KEYS': {API_KEY},
+        'ITEMS_PER_PAGE': 20  # 分页每页数量
+    })
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     with sqlite3.connect(app.config['DATABASE']) as conn:
         conn.execute('''
                      CREATE TABLE IF NOT EXISTS uploads
@@ -61,7 +53,11 @@ def init_db():
                      ''')
 
 
-init_db()
+@auth.get_password
+def get_password(username):
+    if username in users:
+        return users.get(username)
+    return None
 
 
 def get_unique_filename(filename):
