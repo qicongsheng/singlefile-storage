@@ -10,3 +10,4 @@ ENV PORT=5083 \
 RUN pip install --no-cache-dir singlefile-storage -U && mkdir -p /data/singlefile
 
 CMD ["singlefile-storage"]
+
