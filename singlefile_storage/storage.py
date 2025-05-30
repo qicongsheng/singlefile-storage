@@ -24,7 +24,7 @@ def init_app():
         'MAX_CONTENT_LENGTH': 64 * 1024 * 1024,
         'ALLOWED_EXTENSIONS': {'html', 'htm'},
         'API_KEYS': {API_KEY},
-        'ITEMS_PER_PAGE': 20  # 分页每页数量
+        'ITEMS_PER_PAGE': 12  # 分页每页数量
     })
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     with sqlite3.connect(app.config['DATABASE']) as conn:
@@ -135,7 +135,7 @@ LIST_TEMPLATE = """<!DOCTYPE html>
         }
 
         td {
-            padding: 1rem;
+            padding: 0.3rem;
             border-bottom: 1px solid var(--gray-200);
             color: var(--gray-600);
             overflow: hidden;
